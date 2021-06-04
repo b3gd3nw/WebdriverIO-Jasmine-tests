@@ -1,0 +1,16 @@
+import SongPage from '../pageobjects/song.page'
+
+describe('Song page test', () => {
+    it('should be display play button', async () => {
+        await SongPage.open();
+        expect (await SongPage.existsBtn()).toBe(true);
+    });
+    it('should click on play button', async () => {
+        expect (await SongPage.clickOnPlay()).toBe(true);
+    });
+    it('should be display dropdown', async () => {
+        expect (await SongPage.openDropDown()).toBe(true);
+    });
+});
+
+
