@@ -11,6 +11,9 @@ describe('Song page test', () => {
     it('should be display dropdown', async () => {
         expect (await SongPage.openDropDown()).toBe(true);
     });
+    it('should be at least one item on the DSP list ', async () => {
+        expect (await SongPage.check_service_list()).toBe(true);
+    });
 });
 
 
