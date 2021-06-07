@@ -9,6 +9,11 @@ class SongPage extends Page {
      */
     get playBtn () { return $('linkfire-button') }
     get title () { return $('.cnt-head_title h1') }
+    get service_list () { return $$('.service-list__item') }
+
+    async check_service_list() {
+        return (await this.service_list).length != 0 ? true : false;
+    }
 
     async existsBtn() {
         return await (await this.playBtn).isDisplayed();
